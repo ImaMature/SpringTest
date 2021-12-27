@@ -13,6 +13,7 @@ public class Day01_3_thymeleaf {
         SpringApplication.run(Day01_3_thymeleaf.class, args); //웹 키는 거
     }
 
+
     //타임 리프(thymeleaf)를 이용한 html 접근
         //thymeleaf : resources 폴더 내 templates 폴더 생성하고 그 폴더 내에서 html 반환
             //java 폴더에 백엔드
