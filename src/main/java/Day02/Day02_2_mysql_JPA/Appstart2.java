@@ -7,5 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Appstart2 {
     public static void main(String[] args) {
         SpringApplication.run(Appstart2.class,args);
+
     }
 }
