@@ -13,7 +13,8 @@ import java.util.Date;
 @AllArgsConstructor //미리 만들어 진것들은 첫글자 대문자이기 때문에
 @NoArgsConstructor
 public class BoardDto {
-    //필드
+
+    //필드ㅁㅁㅁ
     private String b_title;
     private String b_contents;
     private Date b_date;

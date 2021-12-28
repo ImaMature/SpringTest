@@ -23,7 +23,7 @@ function boardwrite(){
             url: "boardwrite3", //매핑할 경로
             method: "Post",      // 보내는 방식
             data:JSON.stringify(param),      //보내는 데이터 (
-            contentType: 'application/json;', //보내는 데이터 형식 (완전한 데이터), utf-8?  charset=utf-8
+            contentType: 'application/json', //보내는 데이터 형식 (완전한 데이터), utf-8?  charset=utf-8
             success: function(result){       //통신 성공했을 때
                 alert("통신 성공");
                 location.href="/";           //"/"와 매핑하기
