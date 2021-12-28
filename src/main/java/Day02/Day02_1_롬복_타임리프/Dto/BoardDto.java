@@ -14,7 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class BoardDto {
 
-    //필드ㅁㅁㅁ
+    //필드
     private String b_title;
     private String b_contents;
     private Date b_date;
