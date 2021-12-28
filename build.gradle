@@ -17,7 +17,9 @@ dependencies { //의존성 [라이브러리 추가하는 공간]
     testImplementation 'org.springframework.boot:spring-boot-starter-test' //2. 스프링부트 테스트 모드 제공
     compileOnly 'org.projectlombok:lombok'          //3. 롬북 라이브러리 제공
     annotationProcessor 'org.projectlombok:lombok'  //4. 롬북 연결 라이브러리 제공
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' //5. 타임리프(thymeleaf) 라이브러리 제공
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    //5. 타임리프(thymeleaf) 라이브러리 제공
+    // 템플릿 엔진 //프론트랑 자바랑 연결해주는 친구
 
 }
 

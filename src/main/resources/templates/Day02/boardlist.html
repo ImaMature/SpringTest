@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 본인 css 설정 ( header.jsp에서 가져옴 ) -->
+    <link rel="stylesheet" href="/jsp2/website/css/main.css?=v3">
+
+</head>
+<body>
+    <div class="container">
+        <h3>예제1</h3>
+        <p>컨트롤러[C]에서 타임리프를 이용한 HTML(프론트, View) 객체 이동 [model -> 타임리프문법]</p>
+        <table class="table">
+            <tr>
+                <td>제목</td><td>내용</td><td>작성일</td>
+            </tr>
+            <tr>
+                <td th:text = "${boardDto.b_title}"></td>
+                <!--th:text : 태그 안에 텍스트 넣기 -->
+                <!--"${변수명}" --> <!--자동완성 안됨-->
+                <td th:text = "${boardDto.b_contents}"></td>
+                <td th:text = "${boardDto.b_date}"></td>
+
+            </tr>
+        </table>
+
+
+        <h3>예제2</h3>
+        <p>*폼 방식 : HTML[V]에서 컨트롤러[C]로 객체이동</p>
+        <!--보내기 -->
+        <form action="boardwrite" method="get"> <!--mapping의 /boardwrite로 이동 -->
+            <input type="text" name="b_title"> <!--  name값을 Dto 필드명과 동일하게 설정하기 -->
+            <input type="text" name="b_contents">
+            <input type="submit" value="전송">
+            <!-- dto의 필드명과 name 필드명이 같으면 mapping으로 받아옴 -->
+        </form>
+        <p>*컨트롤러[C]에서 HTML[V]로 객체이동</p>
+        <table class="table">
+            <tr>
+                <td>제목</td><td>내용</td><td>작성일</td>
+            </tr>
+            <tr th:each = "boardDto : ${boardDtos}"> <!--입력과 동시에 받기-->
+                <td th:text = "${boardDto.b_title}"></td>
+                <td th:text = "${boardDto.b_contents}"></td>
+                <td th:text = "${boardDto.b_date}"></td>
+            </tr>
+        </table> <br>
+
+
+        <h3>예제3</h3>
+        <p>*ajax방식 : HTML[V]에서 컨트롤러[C]로 객체이동</p>
+        <input type="text" id="b_title">
+        <input type="text" id="b_contents">
+        <button onclick="boardwrite()">전송2</button>
+
+    </div>
+
+
+    <!-- jQuery가 있어야 ajax실행 가능 ( header.jsp에서 가져옴 ) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- 부트스트랩 설정 ( header.jsp에서 가져옴 ) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+    <!-- 타임리프 내에서 본인 js 불러오기-->
+    <!-- 경로넣을 땐 @ 변수넣을 땐 $  static이 기본 경로라 하위 폴더명부터 시작-->
+    <script th:src="@{js/Day02/boardlist.js}"></script>
+
+    <!-- jsp에서 본인 꺼 js 호출하기 -->
+    <!--<script src="../../js/main.js"></script>-->
+
+</body>
+</html>
