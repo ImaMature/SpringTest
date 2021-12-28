@@ -46,6 +46,7 @@ public class BoardController {
         return "redirect:/";          // 경로 이동 (redirect : 경로명)
     }
 
+
 ////////////////////////////////////// 예제3 : ajax 이용 /////////////////////////////////////////////////////////////
     @GetMapping("/boardwrite2")
     public String boardwrite2(BoardDto boardDto){
