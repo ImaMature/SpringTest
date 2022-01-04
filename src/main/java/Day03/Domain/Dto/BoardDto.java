@@ -16,12 +16,12 @@ public class BoardDto {
     private String b_title;
     private String b_contents;
     private String b_writer;
-    private LocalDateTime createdDate; //생성일
+    private LocalDateTime b_createdDate; //생성일
     private int b_count;
 
     //dto -> entity 변경하는 메소드
     public BoardEntity toentity(){
-        return  BoardEntity.builder()
+        return BoardEntity.builder()
                 .b_title(this.b_title) //b_num, b_count는 직접 넣어주는게 아니라 뺐음
                 .b_contents(this.b_contents)
                 .b_writer(this.b_writer)

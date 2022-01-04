@@ -15,13 +15,14 @@ public class BoardEntity extends BaseTimeEntity{ //날짜 시간 상속 받아 �
     @Id //pk
     @GeneratedValue(strategy= GenerationType.IDENTITY) //auto key
     private int b_num;
-
-    @Column
-    private String b_title;
     @Column
     private String b_contents;
     @Column
-    private String b_writer;
-    @Column
     private int b_count;
+    @Column
+    private String b_title;
+
+    @Column
+    private String b_writer;
+
 }

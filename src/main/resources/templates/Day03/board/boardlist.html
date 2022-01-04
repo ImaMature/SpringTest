@@ -8,15 +8,21 @@
     <div th:replace="Day03/header.html::header"></div> <!--헤더-->
     <div class="container">
         <table class="table">
-            <a th:href="@{boardwrite}"><button type="button" class="btn btn-primary">글쓰기</button></a>
-            <thead>
+            <a th:href="@{/board/boardwrite}"><button type="button" class="btn btn-primary">글쓰기</button></a>
+            <tr>
                 <th>번호</th><th>제목</th><th>작성자</th><th>내용</th><th>작성일</th><th>조회수</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td><td>ㅜ</td><td>ㄷ</td><td>ㄱ</td><td>2020-12-12</td><td>10</td>
-                </tr>
-            </tbody>
+            </tr>
+            <!--each문 밑에는 dto에 있는거 빼오는거-->
+
+            <tr th:each="boardDto : ${BoardDtos}">
+                <td th:text="${boardDto.b_num}"></td>
+                <td th:text="${boardDto.b_title}"></td>
+                <td th:text="${boardDto.b_writer}"></td>
+                <td th:text="${boardDto.b_contents}"></td>
+                <td th:text="${boardDto.b_createdDate}"></td>
+                <td th:text="${boardDto.b_count}"></td>
+            </tr>
+
         </table>
 
 
