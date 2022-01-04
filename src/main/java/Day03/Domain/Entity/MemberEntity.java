@@ -1,13 +1,19 @@
 package Day03.Domain.Entity;
 
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity //DB 내 테이블과 연결
 @Table(name="member") //테이블 속성
 @Setter
-public class MemberEntity {
+@Getter
+@Builder //생성자 안정성 보장
+@AllArgsConstructor //풀 생성자
+@NoArgsConstructor //빈 생성자
+public class MemberEntity extends BaseTimeEntity{
+    //기본 시간을 만들어주는 클래스를 만들어서 상속받기
+    //왜냐면 클래스하나 만들어놓으면 여기저기서 쓰일 수 있기 때문이다.
 
     @Id//기본키 pk
     @GeneratedValue(strategy= GenerationType.IDENTITY) //auto key
@@ -31,4 +37,6 @@ public class MemberEntity {
     private int m_point;        //회원 포인트
     @Column
     private String m_grade;     //회원 등급
+
+
 }

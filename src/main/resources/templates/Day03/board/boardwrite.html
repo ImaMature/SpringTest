@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:replace="Day03/header.html::header"></div> <!--헤더-->
+    <div class="container">
+        <form method="post" action="/board/boardwritecontroller">
+            제목 : <input type="text" name="b_title"> <br>
+            내용 : <input type="text" name="b_contents"> <br>
+            작성자 : <input type="text" name=""> <br>
+            <input type="submit" value="글쓰기">
+        </form>
+    </div>
+</body>
+</html>
